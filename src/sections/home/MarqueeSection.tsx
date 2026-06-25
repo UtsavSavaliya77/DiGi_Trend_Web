@@ -2,6 +2,13 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Image, { type StaticImageData } from "next/image";
+import { Syne } from "next/font/google";
+
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
 
 import logo1 from "../../../public/images/2.svg";
 import logo2 from "../../../public/images/2.svg";
@@ -399,7 +406,7 @@ export default function SpiralBrands({
           zIndex: 2,
         }}
       >
-        <p className="text-[30px] md:text-[50px] tracking-[0.2em] uppercase text-[#061146]">Our Sector</p>
+        <p className={`${syne.className} text-[30px] md:text-[50px] tracking-[0.2em] uppercase text-[#061146]`}>Our Sector</p>
       </div>
 
       {/* Spiral marquee */}

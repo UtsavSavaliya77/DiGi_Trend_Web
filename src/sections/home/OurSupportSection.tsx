@@ -1,6 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import { Syne, Inter } from "next/font/google";
+
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export default function OurSupport() {
   const [active, setActive] = useState<boolean>(false);
@@ -74,7 +85,7 @@ export default function OurSupport() {
         <div className="flex justify-center">
           <h1 className="m-0 font-extrabold leading-[0.92] tracking-[-0.045em]">
             {/* Top heading */}
-            <span className="mb-2 flex items-center justify-center gap-2 text-[clamp(2.1rem,7vw,4.15rem)] leading-none sm:gap-3 md:gap-4">
+            <span className={`${syne.className} mb-2 flex items-center justify-center gap-2 text-[clamp(2.1rem,7vw,4.15rem)] leading-none sm:gap-3 md:gap-4`}>
               <span>We support</span>
 
               <span
@@ -89,7 +100,7 @@ export default function OurSupport() {
 
             {/* Growth heading */}
             <span
-              className={`block whitespace-nowrap text-[clamp(4rem,15vw,9.25rem)] transition-colors duration-500 ${
+              className={`${syne.className} block whitespace-nowrap text-[clamp(4rem,15vw,9.25rem)] transition-colors duration-500 ${
                 active ? "text-[#EB0A1C]" : "text-[#061146]"
               }`}
             >
@@ -129,7 +140,7 @@ export default function OurSupport() {
             </span>
 
             {/* Bottom heading */}
-            <span className="mt-4 flex items-center justify-center gap-1 text-[clamp(1.73rem,6vw,4.5rem)] leading-none sm:mt-5 sm:gap-2 md:mt-6">
+            <span className={` ${syne.className} mt-4 flex items-center justify-center gap-1 text-[clamp(1.73rem,6vw,4.5rem)] leading-none sm:mt-5 sm:gap-2 md:mt-6`}>
               <svg
                 className="h-[42px] w-[46px] shrink-0 sm:h-[50px] sm:w-[55px] md:h-[60px] md:w-[65px]"
                 viewBox="0 0 80 70"
@@ -156,7 +167,7 @@ export default function OurSupport() {
         </div>
 
         {/* Description */}
-        <p className="mx-auto mt-7 max-w-[560px] px-2 text-sm leading-6 text-[#6a6d76] sm:mt-8 sm:text-[15px] sm:leading-7">
+        <p className={` ${inter.className} mx-auto mt-7 max-w-[560px] px-2 text-sm leading-6 text-[#6a6d76] sm:mt-8 sm:text-[15px] sm:leading-7`}>
           We turn great ideas into working products.
           <br className="hidden sm:block" />
           <span className="sm:ml-1">
@@ -166,7 +177,7 @@ export default function OurSupport() {
         </p>
 
         {/* Actions */}
-        <div className="mt-7 flex flex-col items-center justify-center gap-4 sm:mt-8 sm:flex-row sm:gap-6">
+        <div className={`mt-7 flex flex-col items-center justify-center gap-4 sm:mt-8 sm:flex-row sm:gap-6 ${inter.className}`}>
           <button
             type="button"
             className="w-full rounded-full bg-gradient-to-br from-[#061146] to-[#EB0A1C] px-7 py-4 text-sm font-bold text-white shadow-[0_12px_24px_rgba(255,122,24,0.25)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_35px_rgba(255,122,24,0.32)] focus:outline-none focus-visible:ring-4 focus-visible:ring-orange-200 sm:w-auto sm:text-base"
@@ -176,7 +187,7 @@ export default function OurSupport() {
 
           <a
             href="#about"
-            className="text-sm font-bold text-[#061146] underline decoration-1 underline-offset-4 transition duration-300 hover:text-[#EB0A1C] focus:outline-none focus-visible:rounded focus-visible:ring-4 focus-visible:ring-indigo-200 sm:text-base"
+            className={`text-sm font-bold text-[#061146] underline decoration-1 underline-offset-4 transition duration-300 hover:text-[#EB0A1C] focus:outline-none focus-visible:rounded focus-visible:ring-4 focus-visible:ring-indigo-200 sm:text-base ${inter.className}`}
           >
             More about us
           </a>

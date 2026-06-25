@@ -2,6 +2,18 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { ChangeEvent, FormEvent } from "react";
+import { Syne, Inter } from "next/font/google";
+
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
 import {
   FiCheck,
   FiLoader,
@@ -215,11 +227,11 @@ export default function Talk() {
                 Contact us
               </span>
 
-              <h2 className="text-[clamp(2.25rem,7vw,4rem)] font-black leading-[1.05] tracking-tight text-[#061146]">
+              <h2 className={` ${syne.className} text-[clamp(2.25rem,7vw,4rem)] font-black leading-[1.05] tracking-tight text-[#061146]`}>
                 Let&apos;s talk
               </h2>
 
-              <p className="mt-4 max-w-xl text-sm leading-6 text-[#061146]/70 sm:mt-5 sm:text-base sm:leading-7">
+              <p className={` ${inter.className} mt-4 max-w-xl text-sm leading-6 text-[#061146]/70 sm:mt-5 sm:text-base sm:leading-7 `}>
                 To request a quote or meet up for coffee,
                 contact us directly or fill out the form. We
                 will get back to you promptly.
@@ -254,7 +266,7 @@ export default function Talk() {
                 <div>
                   <label
                     htmlFor="contact-name"
-                    className="mb-2 block text-sm font-bold text-slate-900"
+                    className={`${inter.className} mb-2 block text-sm font-bold text-slate-900`}
                   >
                     Your Name
                     <span
@@ -285,7 +297,7 @@ export default function Talk() {
                 <div>
                   <label
                     htmlFor="contact-email"
-                    className="mb-2 block text-sm font-bold text-slate-900"
+                    className={`${inter.className} mb-2 block text-sm font-bold text-slate-900`}
                   >
                     Your Email
                     <span
@@ -316,7 +328,7 @@ export default function Talk() {
                   <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
                     <label
                       htmlFor="contact-message"
-                      className="block text-sm font-bold text-slate-900"
+                      className={`${inter.className} block text-sm font-bold text-slate-900`}
                     >
                       Your Message
                       <span
@@ -363,7 +375,7 @@ export default function Talk() {
                     {loading ? (
                       <>
                         <FiLoader
-                          className="animate-spin text-xl text-blue-800"
+                          className={`${inter.className} animate-spin text-xl text-blue-800`}
                           aria-hidden="true"
                         />
                         <span>Sending...</span>
@@ -375,7 +387,7 @@ export default function Talk() {
                           className="text-xl text-emerald-600"
                           aria-hidden="true"
                         />
-                        <span className="text-emerald-700">
+                        <span className={` ${inter.className} text-emerald-700`}>
                           Message Sent
                         </span>
                       </>
@@ -385,7 +397,7 @@ export default function Talk() {
                           className="text-xl transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:rotate-12 group-hover:text-[#EB0A1C]"
                           aria-hidden="true"
                         />
-                        <span className="group-hover:text-[#EB0A1C]">Send Message</span>
+                        <span className={` ${inter.className} group-hover:text-[#EB0A1C]`}>Send Message</span>
                       </>
                     )}
                   </span>
@@ -412,12 +424,12 @@ export default function Talk() {
                       {submitStatus.type === "success" ? (
                         <FiCheck className="mt-0.5 shrink-0 text-lg" />
                       ) : (
-                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-red-100 text-xs font-bold">
+                        <span className={` ${inter.className} flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-red-100 text-xs font-bold`}>
                           !
                         </span>
                       )}
 
-                      <p className="min-w-0 break-words">
+                      <p className={` ${inter.className} min-w-0 break-words`}>
                         {submitStatus.message}
                       </p>
                     </div>
@@ -468,7 +480,7 @@ export default function Talk() {
                     <FiMapPin className="text-lg sm:text-xl" />
                   </span>
 
-                  <p className="min-w-0 pt-0.5 text-sm leading-6 text-slate-700 sm:pt-1 sm:text-base">
+                  <p className={`${inter.className} min-w-0 pt-0.5 text-sm leading-6 text-slate-700 sm:pt-1 sm:text-base`}>
                     151 New Park Ave, Hartford, CT 06106
                     <br />
                     United States
@@ -482,7 +494,7 @@ export default function Talk() {
 
                   <a
                     href="tel:+12033029545"
-                    className="min-w-0 text-sm font-medium text-slate-700 transition hover:text-blue-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 sm:text-base"
+                    className={`${inter.className} min-w-0 text-sm font-medium text-slate-700 transition hover:text-blue-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 sm:text-base`}
                   >
                     +1 (203) 302-9545
                   </a>
@@ -495,7 +507,7 @@ export default function Talk() {
 
                   <a
                     href="mailto:contactus@inveritasoft.com"
-                    className="min-w-0 break-all text-sm font-medium text-slate-700 transition hover:text-blue-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 sm:text-base"
+                    className={`${inter.className} min-w-0 break-all text-sm font-medium text-slate-700 transition hover:text-blue-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 sm:text-base`}
                   >
                     contactus@inveritasoft.com
                   </a>
