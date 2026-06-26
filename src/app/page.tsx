@@ -2,6 +2,7 @@ import HeroSection from "@/sections/home/HeroSection";
 import LetsTalkSection from "@/sections/home/LetsTalkSection";
 import SpiralBrands from "@/sections/home/MarqueeSection";
 import OurSupport from "@/sections/home/OurSupportSection";
+import AnimatSection from "@/sections/home/AnimatSection";
 
 export const metadata = {
   title: "DiGi Trend | Branding & Digital Growth Agency",
@@ -25,6 +26,15 @@ export default function HomePage() {
         </div>
       </div>
 
+      {/* Animate Section */}
+      <div className="w-full bg-[#061146]">
+        <div className="w-full mx-auto">
+          <div className="w-full">
+            <AnimatSection />
+          </div>
+        </div>
+      </div>
+
       {/* Let's Talk SECTION */}
       <div className="w-full bg-[#061146]">
         <div className="w-full mx-auto">
@@ -42,6 +52,10 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+
+      
     </main>
+
+    
   );
 }
